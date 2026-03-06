@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c65gi4gpfcq3r"]
+
+[ext_resource type="Script" uid="uid://4ahulaer3nb7" path="res://scenes/ikan.gd" id="1_oscho"]
+[ext_resource type="Texture2D" uid="uid://cm7shhx4j4f1r" path="res://assets/kenney_platformerpack/PNG/Enemies/fishPink.png" id="1_yhs2k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u16fc"]
+radius = 29.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oscho"]
+radius = 31.0
+height = 70.0
+
+[node name="Ikan" type="RigidBody2D" unique_id=737954583]
+script = ExtResource("1_oscho")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1920341582]
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_yhs2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4450314]
+shape = SubResource("CapsuleShape2D_u16fc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=776098563]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1406739873]
+shape = SubResource("CapsuleShape2D_oscho")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

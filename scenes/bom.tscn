@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c5pa8dd0fhhg4"]
+
+[ext_resource type="Script" uid="uid://vcy61x2ywrku" path="res://scenes/bom.gd" id="1_5nvph"]
+[ext_resource type="Texture2D" uid="uid://bj7p6binvtp2i" path="res://assets/kenney_platformerpack/PNG/Tiles/bomb.png" id="1_ivfjx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5nvph"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcrnl"]
+radius = 74.00676
+
+[node name="Bom" type="RigidBody2D" unique_id=29228191]
+script = ExtResource("1_5nvph")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023287206]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ivfjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=113164741]
+position = Vector2(-4, 3)
+shape = SubResource("CircleShape2D_5nvph")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=825929367]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2060230037]
+position = Vector2(-6, 2)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_wcrnl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

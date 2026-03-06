@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://csmo21u3euvqp"]
+
+[ext_resource type="Script" uid="uid://rrp14kk7c7gy" path="res://scenes/LoseArea.gd" id="1_hhv4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
+size = Vector2(2050.5, 180.5)
+
+[node name="Area2D" type="Area2D" unique_id=84186288]
+script = ExtResource("1_hhv4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=988330240]
+position = Vector2(1033.75, 156.75)
+shape = SubResource("RectangleShape2D_dl81w")
+
+[connection signal="body_entered" from="." to="." method="_on_Area_Trigger_body_entered"]

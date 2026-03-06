@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dowgh5846lsd8"]
+
+[ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1_di17u"]
+[ext_resource type="Script" uid="uid://d2flw5b00n622" path="res://scenes/lose_screen_2.gd" id="1_p7dw2"]
+
+[node name="LoseScreen" type="Node2D" unique_id=1915258341]
+script = ExtResource("1_p7dw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=795827148]
+position = Vector2(512, 320)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("1_di17u")

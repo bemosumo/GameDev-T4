@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dbwkh4ajx7v37"]
+
+[ext_resource type="Script" uid="uid://dxtebu8pr7xg6" path="res://scenes/jurang.gd" id="1_b2vkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18wrt"]
+size = Vector2(2419, 86)
+
+[node name="Jurang" type="Area2D" unique_id=232840527]
+script = ExtResource("1_b2vkw")
+sceneName = "LoseScreen2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=21009172]
+position = Vector2(798.5, 33)
+shape = SubResource("RectangleShape2D_18wrt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

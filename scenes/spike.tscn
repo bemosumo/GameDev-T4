@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d31g6p4drd2w"]
+
+[ext_resource type="Script" uid="uid://cd5qypo72fbua" path="res://scenes/spike.gd" id="1_7a7y0"]
+[ext_resource type="Texture2D" uid="uid://b45wpn13ajdj4" path="res://assets/kenney_platformerpack/PNG/Tiles/spikes.png" id="2_d2mqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx2lw"]
+size = Vector2(123, 64.5)
+
+[node name="Spike" type="Area2D" unique_id=638333089]
+script = ExtResource("1_7a7y0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666731097]
+texture = ExtResource("2_d2mqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=862818187]
+position = Vector2(1, 33.75)
+shape = SubResource("RectangleShape2D_cx2lw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
